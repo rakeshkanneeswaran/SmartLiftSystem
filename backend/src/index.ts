@@ -6,7 +6,9 @@ import { SubscribtionType, ServiceType } from "./types";
 import http from 'http';
 import { WebSocket, WebSocketServer } from 'ws';
 
+// make sure not port is runnign on the 3000
 const PORT = 3000
+
 
 const app = express();
 const client = createClient();
