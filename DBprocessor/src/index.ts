@@ -30,6 +30,7 @@ async function startWorker() {
                 //}
 
                 // PLEASE MAKE PRISMA AND 
+                //ORM
 
             } catch (error) {
                 console.error("Error processing redisData:", error);
