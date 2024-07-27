@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.decideLiftStops = void 0;
+exports.decideLiftStops = decideLiftStops;
 function decideLiftStops(requests) {
     // Create a map to count the requests for each floor
     const floorCounts = {};
@@ -23,7 +23,6 @@ function decideLiftStops(requests) {
     const sortedFloors = floorCountArray.map(item => item.floor);
     return sortedFloors;
 }
-exports.decideLiftStops = decideLiftStops;
 // Example usage:
 const requests = [
     { floorRequested: 3 },

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.decideLiftStops = void 0;
+exports.decideLiftStops = decideLiftStops;
 // Helper function to calculate Euclidean distance between two points
 function euclideanDistance(point1, point2) {
     return Math.sqrt(point1.reduce((sum, val, index) => sum + Math.pow(val - point2[index], 2), 0));
@@ -59,7 +59,6 @@ function decideLiftStops(requests, k) {
         return Math.round(floor);
     });
 }
-exports.decideLiftStops = decideLiftStops;
 // // Example usage:
 // const requests: floorRequest[] = [
 //     { floorRequested: 3 },
