@@ -1,7 +1,9 @@
+Sure, I've removed the section related to the Lift Operator Web Application. Here's the updated README without that section:
+
+```markdown
 # Lift Management System
 
 This project implements a lift management system using a combination of HTTP and WebSocket servers. The system includes different clients: operators, people, and Raspberry IOT devices. The communication between these clients and the server is handled through specific request and response formats.
-
 
 The server will be running on `http://localhost:3000` and WebSocket connections can be made to `ws://localhost:3000`.
 
@@ -131,6 +133,14 @@ When a message is received on the WebSocket server, it will be parsed and handle
 }
 ```
 
+## Initialization
+
+To initialize the Redis server using Docker, run the following command:
+
+```sh
+docker run --name lift-redis -d -p 6379:6379 redis
+```
+
 ## Example Usage
 
 ### Operator Subscription
@@ -190,3 +200,4 @@ When a message is received on the WebSocket server, it will be parsed and handle
 - The WebSocket server manages multiple types of clients, each with different roles and functionalities within the lift management system.
 
 For any further questions or issues, please refer to the documentation or contact the project maintainers.
+```
