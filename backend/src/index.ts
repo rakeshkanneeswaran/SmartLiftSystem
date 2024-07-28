@@ -26,6 +26,7 @@ function FromOperatorToRaspberry(ws: WebSocket, message: any) {
         RaspberryWs.forEach(eachObject => {
             if (eachObject.liftId == message.liftId) {
                 eachObject.ws.send(JSON.stringify({
+                    messageType : "CommandFromOperator",
                     takeInput: message.takeInput
                 }));
             }
@@ -59,6 +60,7 @@ function SubscribtionHandler(ws: WebSocket, message: any) {
         RaspberryWs.push({ ws: ws as unknown as globalThis.WebSocket, liftId: message.liftId });
 
         ws.send(JSON.stringify({
+            messageType : "ConnectionConformation",
             status: "successfully subscribed as Raspberry IOT",
             SubscribtionType: SubscribtionType.RasperryIOTType,
             liftId: message.liftId,

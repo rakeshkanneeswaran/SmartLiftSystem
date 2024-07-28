@@ -32,6 +32,7 @@ function FromOperatorToRaspberry(ws, message) {
         RaspberryWs.forEach(eachObject => {
             if (eachObject.liftId == message.liftId) {
                 eachObject.ws.send(JSON.stringify({
+                    messageType: "CommandFromOperator",
                     takeInput: message.takeInput
                 }));
             }
@@ -40,8 +41,8 @@ function FromOperatorToRaspberry(ws, message) {
 }
 function sendToRedis(message) {
     return __awaiter(this, void 0, void 0, function* () {
-        const dataSentToRedis = yield client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId, timeOfRequest: message.timeOfRequest }));
-        console.log(`Data sent to Redis: ${dataSentToRedis}`);
+        const RedisIndexNumber = yield client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId, timeOfRequest: message.timeOfRequest }));
+        console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
     });
 }
 function SubscribtionHandler(ws, message) {
@@ -64,6 +65,7 @@ function SubscribtionHandler(ws, message) {
     else if (message.SubscribtionType == types_1.SubscribtionType.RasperryIOTType) {
         RaspberryWs.push({ ws: ws, liftId: message.liftId });
         ws.send(JSON.stringify({
+            messageType: "ConnectionConformation",
             status: "successfully subscribed as Raspberry IOT",
             SubscribtionType: types_1.SubscribtionType.RasperryIOTType,
             liftId: message.liftId,
