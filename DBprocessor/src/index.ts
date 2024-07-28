@@ -13,12 +13,19 @@ async function startWorker() {
         while (true) {
             try {
                 const dataForPostgress = await client.brPop("DBprocessorQueue",0);
-                console.log(dataForPostgress)
-                //dataForPostgress will look like this:
+                const parseData = JSON.parse( dataForPostgress.element)
+                console.log(parseData)
+                //parseData will look like this:
 
                 // {
-                //     key: 'DBprocessorQueue',
-                //     element: '{"floorRequestArray":[{"floorRequested":3},{"floorRequested":5},{"floorRequested":8}],"stopsDecided":[3,7],"liftId":"lift1","timeOfRequest":"2024-07-28T09:59:28.964Z"}'
+                //     floorRequestArray: [
+                //       { floorRequested: 6 },
+                //       { floorRequested: 5 },
+                //       { floorRequested: 8 }
+                //     ],
+                //     stopsDecided: [ 7, 5 ],
+                //     liftId: 'lift1',
+                //     timeOfRequest: '2024-07-28T13:52:41.499Z'
                 //   }
 
                 // PLEASE MAKE PRISMA AND 

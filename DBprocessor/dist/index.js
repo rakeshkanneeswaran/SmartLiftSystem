@@ -16,16 +16,21 @@ function startWorker() {
         try {
             yield client.connect();
             console.log("DBProcessor Worker connected to Redis.");
-            // Main loop
+            // Main infinity loop
             while (true) {
                 try {
                     const dataForPostgress = yield client.brPop("DBprocessorQueue", 0);
-                    console.log(dataForPostgress);
+                    const parseData = JSON.parse(dataForPostgress.element);
+                    console.log(parseData);
+                    //dataForPostgress will look like this:
+                    // {
+                    //     key: 'DBprocessorQueue',
+                    //     element: '{"floorRequestArray":[{"floorRequested":3},{"floorRequested":5},{"floorRequested":8}],"stopsDecided":[3,7],"liftId":"lift1","timeOfRequest":"2024-07-28T09:59:28.964Z"}'
+                    //   }
+                    // PLEASE MAKE PRISMA AND 
                 }
                 catch (error) {
                     console.error("Error processing redisData:", error);
-                    // Implement your error handling logic here. For example, you might want to push
-                    // the submission back onto the queue or log the error to a file.
                 }
             }
         }
