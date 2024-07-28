@@ -27,6 +27,7 @@ async function startWorker() {
                 //     liftId: 'lift1',
                 //     timeOfRequest: '2024-07-28T13:52:41.499Z'
                 //   }
+                //}
 
                 // PLEASE MAKE PRISMA AND 
 
