@@ -14,11 +14,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const kMeans_1 = require("./periorityFunction/kMeans");
+const redis_1 = require("redis");
 const types_1 = require("./types");
 const http_1 = __importDefault(require("http"));
 const ws_1 = require("ws");
 const PORT = 3000;
 const app = (0, express_1.default)();
+const client = (0, redis_1.createClient)();
 app.use(express_1.default.json());
 const server = http_1.default.createServer(app);
 const wss = new ws_1.WebSocketServer({ server });
@@ -35,6 +37,12 @@ function FromOperatorToRaspberry(ws, message) {
             }
         });
     }
+}
+function sendToRedis(message) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const dataSentToRedis = yield client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId, timeOfRequest: message.timeOfRequest }));
+        console.log(`Data sent to Redis: ${dataSentToRedis}`);
+    });
 }
 function SubscribtionHandler(ws, message) {
     if (message.SubscribtionType == types_1.SubscribtionType.OperatorType) {
@@ -81,6 +89,9 @@ app.post('/getperiority', (req, res) => __awaiter(void 0, void 0, void 0, functi
                 liftId: req.body.liftId
             }));
         });
+        req.body.stopsDecided = stopsDecided;
+        req.body.timeOfRequest = new Date();
+        sendToRedis(req.body);
         res.status(200).json({
             periorityDecided: stopsDecided
         });
@@ -134,9 +145,21 @@ wss.on('connection', (ws) => {
         console.log(`liftOperatorsWs length: ${liftOperatorsWs.length}`);
     });
 });
-server.listen(PORT, () => {
-    console.log(`The server is listening on port http://localhost:${PORT}/ and websocket is listening on port ws://localhost:${PORT}/`);
-});
+function startServer() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield client.connect();
+            console.log("server connected to redis");
+            server.listen(PORT, () => {
+                console.log(`The server is listening on port http://localhost:${PORT}/ and websocket is listening on port ws://localhost:${PORT}/`);
+            });
+        }
+        catch (error) {
+            console.log(`Error: ${error}`);
+        }
+    });
+}
+startServer();
 // const requestsData: floorRequest[] = [
 //     { floorRequested: 3 },
 //     { floorRequested: 5 },
