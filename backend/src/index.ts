@@ -12,6 +12,7 @@ const PORT = 3000
 
 const app = express();
 const client = createClient();
+
 app.use(express.json());
 
 const server = http.createServer(app);
