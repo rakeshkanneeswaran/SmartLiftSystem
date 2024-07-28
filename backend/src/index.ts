@@ -35,6 +35,8 @@ function FromOperatorToRaspberry(ws: WebSocket, message: any) {
 }
 
 
+
+
 async function sendToRedis(message: any) {
     const RedisIndexNumber = await client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId , timeOfRequest : message.timeOfRequest }))
     console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
