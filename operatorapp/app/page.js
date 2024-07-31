@@ -8,7 +8,7 @@ export default function OperatorApp() {
   const [priority, setPriority] = useState([]);
 
   useEffect(() => {
-    const newSocket = new WebSocket("ws://localhost:3000");
+    const newSocket = new WebSocket("https://n7wk5bc5-3000.inc1.devtunnels.ms/");
     newSocket.onopen = () => {
       console.log("WebSocket connection established");
 

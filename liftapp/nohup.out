@@ -1,0 +1,52 @@
+
+> liftapp@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 1968ms
+ ○ Compiling / ...
+ ✓ Compiled / in 769ms (633 modules)
+ GET / 200 in 950ms
+ ✓ Compiled in 127ms (290 modules)
+ GET / 200 in 31ms
+
+> liftapp@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 1205ms
+ ○ Compiling / ...
+ ✓ Compiled / in 803ms (633 modules)
+ GET / 200 in 978ms
+ ✓ Compiled in 135ms (290 modules)
+ GET / 200 in 34ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+
+> liftapp@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 1341ms
+ ○ Compiling / ...
+ ✓ Compiled / in 719ms (633 modules)
+ GET / 200 in 863ms
+ ✓ Compiled in 104ms (290 modules)
+ GET / 200 in 30ms
+ GET / 200 in 26ms
+ GET / 200 in 23ms
