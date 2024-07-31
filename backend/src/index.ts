@@ -4,6 +4,7 @@ import { Operator, People, RasperryIOT } from "./types";
 import { createClient } from "redis";
 import { SubscribtionType, ServiceType } from "./types";
 import http from 'http';
+import cors from "cors";
 import { WebSocket, WebSocketServer } from 'ws';
 
 // make sure not port is runnign on the 3000
@@ -11,6 +12,7 @@ const PORT = 3000
 
 
 const app = express();
+app.use(cors());
 const client = createClient();
 
 app.use(express.json());
@@ -30,7 +32,7 @@ function FromOperatorToRaspberry(ws: WebSocket, message: any) {
             if (eachObject.liftId == message.liftId) {
                 eachObject.ws.send(JSON.stringify({
                     messageType : "CommandFromOperator",
-                    takeInput: message.takeInput
+                    takeInput: message.takeInput// allow , stop , done
                 }));
             }
         })
@@ -79,6 +81,8 @@ function SubscribtionHandler(ws: WebSocket, message: any) {
 // HTTP SERVER
 app.post('/getperiority', async (req: Request, res: Response) => {
     try {
+        
+        console.log("data received at this endpoint")
         const { floorRequestArray } = req.body;
         console.log(floorRequestArray);
         const stopsDecided = decideLiftStops(floorRequestArray, 2);
@@ -129,6 +133,7 @@ wss.on('connection', (ws) => {
                 SubscribtionHandler(ws, parsedMessage);
             }
             else if (parsedMessage.serviceType == ServiceType.SendToLift) {
+                console.log(message)
                 FromOperatorToRaspberry(ws, parsedMessage)
             }
 
@@ -179,6 +184,7 @@ async function startServer() {
             console.log(`The server is listening on port http://localhost:${PORT}/ and websocket is listening on port ws://localhost:${PORT}/`);
         });
     } catch (error) {
+        console.error("this is error");
         console.log(`Error: ${error}`);
 
     }

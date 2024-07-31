@@ -17,9 +17,12 @@ const kMeans_1 = require("./periorityFunction/kMeans");
 const redis_1 = require("redis");
 const types_1 = require("./types");
 const http_1 = __importDefault(require("http"));
+const cors_1 = __importDefault(require("cors"));
 const ws_1 = require("ws");
+// make sure not port is runnign on the 3000
 const PORT = 3000;
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 const client = (0, redis_1.createClient)();
 app.use(express_1.default.json());
 const server = http_1.default.createServer(app);
@@ -33,7 +36,7 @@ function FromOperatorToRaspberry(ws, message) {
             if (eachObject.liftId == message.liftId) {
                 eachObject.ws.send(JSON.stringify({
                     messageType: "CommandFromOperator",
-                    takeInput: message.takeInput
+                    takeInput: message.takeInput // allow , stop , done
                 }));
             }
         });
@@ -76,6 +79,7 @@ function SubscribtionHandler(ws, message) {
 // HTTP SERVER
 app.post('/getperiority', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log("data received at this endpoint");
         const { floorRequestArray } = req.body;
         console.log(floorRequestArray);
         const stopsDecided = (0, kMeans_1.decideLiftStops)(floorRequestArray, 2);
@@ -115,6 +119,7 @@ wss.on('connection', (ws) => {
                 SubscribtionHandler(ws, parsedMessage);
             }
             else if (parsedMessage.serviceType == types_1.ServiceType.SendToLift) {
+                console.log(message);
                 FromOperatorToRaspberry(ws, parsedMessage);
             }
             ws.send(JSON.stringify({ reply: 'Message received' }));
@@ -157,6 +162,7 @@ function startServer() {
             });
         }
         catch (error) {
+            console.error("this is error");
             console.log(`Error: ${error}`);
         }
     });
