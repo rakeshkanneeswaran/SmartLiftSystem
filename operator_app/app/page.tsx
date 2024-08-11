@@ -15,6 +15,8 @@ export default function OperatorApp() {
   const [webSocket, setWebSocket] = useState<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [priorityList, setPriorityList] = useState<number[]>([]);
+  const [isDoneDisabled, setIsDoneDisabled] = useState<boolean>(false); // State to manage Done button disabled status
+  const [countdown, setCountdown] = useState<number>(0); // State to manage the countdown
 
   useEffect(() => {
     const socket = new WebSocket("https://n7wk5bc5-3000.inc1.devtunnels.ms/");
@@ -63,6 +65,23 @@ export default function OperatorApp() {
         takeInput: command,
       };
       webSocket.send(JSON.stringify(message));
+
+      if (command === "done") {
+        setIsDoneDisabled(true); // Disable the Done button
+        setCountdown(10); // Start the countdown at 10 seconds
+
+        const interval = setInterval(() => {
+          setCountdown((prevCountdown) => {
+            if (prevCountdown > 1) {
+              return prevCountdown - 1;
+            } else {
+              clearInterval(interval);
+              setIsDoneDisabled(false); // Re-enable the button after countdown ends
+              return 0;
+            }
+          });
+        }, 1000); // Update countdown every second
+      }
     }
   };
 
@@ -115,8 +134,9 @@ export default function OperatorApp() {
           <button
             onClick={() => sendCommand("done")}
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+            disabled={isDoneDisabled} // Disable the button if isDoneDisabled is true
           >
-            Done
+            {isDoneDisabled ? `Wait for ${countdown}s` : 'Done'}
           </button>
         </div>
       </div>
