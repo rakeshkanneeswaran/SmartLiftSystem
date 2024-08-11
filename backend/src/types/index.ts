@@ -20,5 +20,6 @@ export enum SubscribtionType {
 export enum ServiceType {
     Subscribtion = "subscribtion",
     SendToLift = "sendToLift",
+    SendToOperator = "sendToOperator"
 }
 

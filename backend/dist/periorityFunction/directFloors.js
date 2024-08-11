@@ -2,28 +2,29 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decideLiftStops = decideLiftStops;
 function decideLiftStops(requests) {
-    // Create a map to count the requests for each floor
-    const floorCounts = {};
-    requests.forEach(request => {
-        if (floorCounts[request.floorRequested] !== undefined) {
-            floorCounts[request.floorRequested]++;
-        }
-        else {
-            floorCounts[request.floorRequested] = 1;
-        }
-    });
-    // Convert the floorCounts object to an array of [floor, count] tuples
-    const floorCountArray = Object.entries(floorCounts).map(([floor, count]) => ({
-        floor: Number(floor),
-        count: Number(count)
-    }));
-    // Sort the array by count in descending order (most requested floors first)
-    floorCountArray.sort((a, b) => b.count - a.count);
-    // Extract the sorted floors
-    const sortedFloors = floorCountArray.map(item => item.floor);
-    return sortedFloors;
+    try {
+        const floorCounts = {};
+        requests.forEach(request => {
+            if (floorCounts[request.floorRequested] !== undefined) {
+                floorCounts[request.floorRequested]++;
+            }
+            else {
+                floorCounts[request.floorRequested] = 1;
+            }
+        });
+        const floorCountArray = Object.entries(floorCounts).map(([floor, count]) => ({
+            floor: Number(floor),
+            count: Number(count)
+        }));
+        floorCountArray.sort((a, b) => b.count - a.count);
+        const sortedFloors = floorCountArray.map(item => item.floor);
+        return sortedFloors;
+    }
+    catch (error) {
+        console.error("An error occurred while deciding lift stops:", error);
+        return [];
+    }
 }
-// Example usage:
 const requests = [
     { floorRequested: 3 },
     { floorRequested: 5 },

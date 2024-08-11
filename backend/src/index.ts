@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { decideLiftStops } from "./periorityFunction/kMeans";
 import { Operator, People, RasperryIOT } from "./types";
-import { createClient } from "redis";
+import { createClient, SocketClosedUnexpectedlyError } from "redis";
 import { SubscribtionType, ServiceType } from "./types";
 import http from 'http';
 import cors from "cors";
@@ -26,12 +26,12 @@ const PeopleWs: WebSocket[] = [];
 
 
 
-function FromOperatorToRaspberry(ws: WebSocket, message: any) {
+function FromOperatorToRaspberry(message: any) {
     if (message.SubscribtionType == "OperatorType") {
         RaspberryWs.forEach(eachObject => {
             if (eachObject.liftId == message.liftId) {
                 eachObject.ws.send(JSON.stringify({
-                    messageType : "CommandFromOperator",
+                    messageType: "CommandFromOperator",
                     takeInput: message.takeInput// allow , stop , done
                 }));
             }
@@ -39,12 +39,23 @@ function FromOperatorToRaspberry(ws: WebSocket, message: any) {
     }
 }
 
-
-
-async function sendToRedis(message: any) {
-    const RedisIndexNumber = await client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId , timeOfRequest : message.timeOfRequest }))
-    console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
+function FromRaspberryToOperator(message: any) {
+    console.log(message)
+    liftOperatorsWs.forEach((socket) => {
+        socket.ws.send(JSON.stringify({
+            messageType: "CommandFromRaspberry",
+            liftStatus: message.liftStatus
+        }))
+    })
 }
+
+
+
+
+// async function sendToRedis(message: any) {
+//     const RedisIndexNumber = await client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId , timeOfRequest : message.timeOfRequest }))
+//     console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
+// }
 
 function SubscribtionHandler(ws: WebSocket, message: any) {
     if (message.SubscribtionType == SubscribtionType.OperatorType) {
@@ -67,7 +78,7 @@ function SubscribtionHandler(ws: WebSocket, message: any) {
         RaspberryWs.push({ ws: ws as unknown as globalThis.WebSocket, liftId: message.liftId });
 
         ws.send(JSON.stringify({
-            messageType : "ConnectionConformation",
+            messageType: "ConnectionConformation",
             status: "successfully subscribed as Raspberry IOT",
             SubscribtionType: SubscribtionType.RasperryIOTType,
             liftId: message.liftId,
@@ -81,12 +92,12 @@ function SubscribtionHandler(ws: WebSocket, message: any) {
 // HTTP SERVER
 app.post('/getperiority', async (req: Request, res: Response) => {
     try {
-        
+
         console.log("data received at this endpoint")
         const { floorRequestArray } = req.body;
         console.log(floorRequestArray);
         const stopsDecided = decideLiftStops(floorRequestArray, 2);
-       
+
 
         PeopleWs.forEach(ws => {
             ws.send(JSON.stringify({
@@ -103,9 +114,9 @@ app.post('/getperiority', async (req: Request, res: Response) => {
 
         })
         req.body.stopsDecided = stopsDecided;
-        req.body.timeOfRequest =  new Date();
+        req.body.timeOfRequest = new Date();
 
-        sendToRedis(req.body);
+        // sendToRedis(req.body);
 
         res.status(200).json({
             periorityDecided: stopsDecided
@@ -132,9 +143,13 @@ wss.on('connection', (ws) => {
             if (parsedMessage.serviceType == ServiceType.Subscribtion) {
                 SubscribtionHandler(ws, parsedMessage);
             }
+            else if (parsedMessage.serviceType == ServiceType.SendToOperator) {
+                console.log(message)
+                FromRaspberryToOperator(parsedMessage)
+            }
             else if (parsedMessage.serviceType == ServiceType.SendToLift) {
                 console.log(message)
-                FromOperatorToRaspberry(ws, parsedMessage)
+                FromOperatorToRaspberry(parsedMessage)
             }
 
             ws.send(JSON.stringify({ reply: 'Message received' }));

@@ -843,3 +843,978 @@ liftOperatorsWs length: 1
 }
 <Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
 sh: line 1: 64742 Killed: 9               node dist/index.js
+
+> backend@1.0.0 start
+> tsc -b && node dist/index.js
+
+server connected to redis
+The server is listening on port http://localhost:3000/ and websocket is listening on port ws://localhost:3000/
+New WebSocket connection
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+New WebSocket connection
+{ serviceType: 'subscribtion', SubscribtionType: 'OperatorType' }
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 1
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+New WebSocket connection
+{ serviceType: 'subscribtion', SubscribtionType: 'OperatorType' }
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 3 }
+]
+data received at this endpoint
+[
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 3 }
+]
+Data sent to Redis with: 73
+Data sent to Redis with: 74
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 1
+liftOperatorsWs length: 1
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 4 },
+  { floorRequested: 6 },
+  { floorRequested: 5 },
+  { floorRequested: 4 }
+]
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 4 },
+  { floorRequested: 6 },
+  { floorRequested: 5 },
+  { floorRequested: 4 }
+]
+Data sent to Redis with: 75
+Data sent to Redis with: 76
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 1
+liftOperatorsWs length: 0
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+{ serviceType: 'subscribtion', SubscribtionType: 'OperatorType' }
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 7 },
+  { floorRequested: 7 },
+  { floorRequested: 7 }
+]
+data received at this endpoint
+[
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 3 },
+  { floorRequested: 7 },
+  { floorRequested: 7 },
+  { floorRequested: 7 }
+]
+Data sent to Redis with: 77
+Data sent to Redis with: 78
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 }
+]
+data received at this endpoint
+[
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 }
+]
+Data sent to Redis with: 79
+Data sent to Redis with: 80
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[]
+data received at this endpoint
+[]
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 5 },
+  { floorRequested: 5 },
+  { floorRequested: 5 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 }
+]
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 5 },
+  { floorRequested: 5 },
+  { floorRequested: 5 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 }
+]
+Data sent to Redis with: 81
+Data sent to Redis with: 82
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 3 },
+  { floorRequested: 6 },
+  { floorRequested: 7 },
+  { floorRequested: 10 }
+]
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 3 },
+  { floorRequested: 6 },
+  { floorRequested: 7 },
+  { floorRequested: 10 }
+]
+Data sent to Redis with: 83
+Data sent to Redis with: 84
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 3 },
+  { floorRequested: 6 },
+  { floorRequested: 7 },
+  { floorRequested: 10 },
+  { floorRequested: 5 },
+  { floorRequested: 3 },
+  { floorRequested: 2 }
+]
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 3 },
+  { floorRequested: 6 },
+  { floorRequested: 7 },
+  { floorRequested: 10 },
+  { floorRequested: 5 },
+  { floorRequested: 3 },
+  { floorRequested: 2 }
+]
+Data sent to Redis with: 85
+Data sent to Redis with: 86
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 6 },
+  { floorRequested: 6 }
+]
+data received at this endpoint
+[
+  { floorRequested: 2 },
+  { floorRequested: 2 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 6 },
+  { floorRequested: 6 }
+]
+Data sent to Redis with: 87
+Data sent to Redis with: 88
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'done'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+data received at this endpoint
+[
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 }
+]
+data received at this endpoint
+[
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 4 },
+  { floorRequested: 8 },
+  { floorRequested: 8 },
+  { floorRequested: 8 }
+]
+Data sent to Redis with: 89
+Data sent to Redis with: 90
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 1
+liftOperatorsWs length: 0
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+sh: line 1: 74480 Killed: 9               node dist/index.js
+
+> backend@1.0.0 start
+> tsc -b && node dist/index.js
+
+server connected to redis
+The server is listening on port http://localhost:3000/ and websocket is listening on port ws://localhost:3000/
+New WebSocket connection
+{ serviceType: 'subscribtion', SubscribtionType: 'OperatorType' }
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'stop'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 48 more bytes>
+{
+  serviceType: 'sendToLift',
+  SubscribtionType: 'OperatorType',
+  liftId: 'lift1',
+  takeInput: 'allow'
+}
+<Buffer 7b 22 73 65 72 76 69 63 65 54 79 70 65 22 3a 22 73 65 6e 64 54 6f 4c 69 66 74 22 2c 22 53 75 62 73 63 72 69 62 74 69 6f 6e 54 79 70 65 22 3a 22 4f 70 ... 49 more bytes>
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 1
+liftOperatorsWs length: 0
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+WebSocket connection closed
+PeopleWs length: 0
+RaspberryWs length: 0
+liftOperatorsWs length: 0
+New WebSocket connection
+{
+  serviceType: 'subscribtion',
+  SubscribtionType: 'RasperryIOTType',
+  liftId: 'lift1'
+}
+sh: line 1: 74868 Killed: 9               node dist/index.js

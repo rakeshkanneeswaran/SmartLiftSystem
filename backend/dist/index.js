@@ -30,7 +30,7 @@ const wss = new ws_1.WebSocketServer({ server });
 const RaspberryWs = [];
 const liftOperatorsWs = [];
 const PeopleWs = [];
-function FromOperatorToRaspberry(ws, message) {
+function FromOperatorToRaspberry(message) {
     if (message.SubscribtionType == "OperatorType") {
         RaspberryWs.forEach(eachObject => {
             if (eachObject.liftId == message.liftId) {
@@ -42,12 +42,19 @@ function FromOperatorToRaspberry(ws, message) {
         });
     }
 }
-function sendToRedis(message) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const RedisIndexNumber = yield client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId, timeOfRequest: message.timeOfRequest }));
-        console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
+function FromRaspberryToOperator(message) {
+    console.log(message);
+    liftOperatorsWs.forEach((socket) => {
+        socket.ws.send(JSON.stringify({
+            messageType: "CommandFromRaspberry",
+            liftStatus: message.liftStatus
+        }));
     });
 }
+// async function sendToRedis(message: any) {
+//     const RedisIndexNumber = await client.lPush("DBprocessorQueue", JSON.stringify({ floorRequestArray: message.floorRequestArray, stopsDecided: message.stopsDecided, liftId: message.liftId , timeOfRequest : message.timeOfRequest }))
+//     console.log(`Data sent to Redis with: ${RedisIndexNumber}`);
+// }
 function SubscribtionHandler(ws, message) {
     if (message.SubscribtionType == types_1.SubscribtionType.OperatorType) {
         liftOperatorsWs.push({ ws: ws });
@@ -97,7 +104,7 @@ app.post('/getperiority', (req, res) => __awaiter(void 0, void 0, void 0, functi
         });
         req.body.stopsDecided = stopsDecided;
         req.body.timeOfRequest = new Date();
-        sendToRedis(req.body);
+        // sendToRedis(req.body);
         res.status(200).json({
             periorityDecided: stopsDecided
         });
@@ -118,9 +125,13 @@ wss.on('connection', (ws) => {
             if (parsedMessage.serviceType == types_1.ServiceType.Subscribtion) {
                 SubscribtionHandler(ws, parsedMessage);
             }
+            else if (parsedMessage.serviceType == types_1.ServiceType.SendToOperator) {
+                console.log(message);
+                FromRaspberryToOperator(parsedMessage);
+            }
             else if (parsedMessage.serviceType == types_1.ServiceType.SendToLift) {
                 console.log(message);
-                FromOperatorToRaspberry(ws, parsedMessage);
+                FromOperatorToRaspberry(parsedMessage);
             }
             ws.send(JSON.stringify({ reply: 'Message received' }));
         }

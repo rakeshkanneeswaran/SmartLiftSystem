@@ -11,4 +11,5 @@ var ServiceType;
 (function (ServiceType) {
     ServiceType["Subscribtion"] = "subscribtion";
     ServiceType["SendToLift"] = "sendToLift";
+    ServiceType["SendToOperator"] = "sendToOperator";
 })(ServiceType || (exports.ServiceType = ServiceType = {}));
