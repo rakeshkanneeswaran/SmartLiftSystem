@@ -21,6 +21,7 @@ const cors_1 = __importDefault(require("cors"));
 const ws_1 = require("ws");
 // make sure not port is runnign on the 3000
 const PORT = 3000;
+console.log("Something  started");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 const client = (0, redis_1.createClient)();
@@ -165,6 +166,7 @@ wss.on('connection', (ws) => {
 });
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("function ran");
         try {
             yield client.connect();
             console.log("server connected to redis");
