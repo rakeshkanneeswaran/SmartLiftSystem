@@ -16,7 +16,7 @@ interface CommandData {
 
 async function sendToServer(floorRequests: FloorRequest[], liftId: string): Promise<boolean> {
   try {
-    await axios.post('https://arrive-badge-bool-pipe.trycloudflare.com/getperiority', {
+    await axios.post('https://mines-fair-starring-kent.trycloudflare.com/getperiority', {
       floorRequestArray: floorRequests,
       liftId: liftId
     });
@@ -34,7 +34,7 @@ export default function LiftApp() {
   const [requestCount, setRequestCount] = useState<number>(0); // State to track number of entries
 
   useEffect(() => {
-    const socket = new WebSocket("https://arrive-badge-bool-pipe.trycloudflare.com");
+    const socket = new WebSocket("https://mines-fair-starring-kent.trycloudflare.com");
 
     socket.onopen = () => {
       console.log("WebSocket connection established");
