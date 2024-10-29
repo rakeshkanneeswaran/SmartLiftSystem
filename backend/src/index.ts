@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { decideLiftStops } from "./periorityFunction/kMeans";
 import { Operator, People, RasperryIOT } from "./types";
-import { createClient, SocketClosedUnexpectedlyError } from "redis";
+// import { createClient, SocketClosedUnexpectedlyError } from "redis";
 import { SubscribtionType, ServiceType } from "./types";
 import http from 'http';
 import cors from "cors";
@@ -13,7 +13,7 @@ const PORT = 3000
 
 const app = express();
 app.use(cors());
-const client = createClient();
+// const client = createClient();
 
 app.use(express.json());
 
@@ -97,6 +97,7 @@ app.post('/getperiority', async (req: Request, res: Response) => {
         const { floorRequestArray } = req.body;
         console.log(floorRequestArray);
         const stopsDecided = decideLiftStops(floorRequestArray, 2);
+        
 
 
         PeopleWs.forEach(ws => {
@@ -193,7 +194,7 @@ wss.on('connection', (ws) => {
 async function startServer() {
 
     try {
-        await client.connect();
+        // await client.connect();
         console.log("server connected to redis");
         server.listen(PORT, () => {
             console.log(`The server is listening on port http://localhost:${PORT}/ and websocket is listening on port ws://localhost:${PORT}/`);

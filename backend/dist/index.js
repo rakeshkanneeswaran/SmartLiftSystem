@@ -14,17 +14,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const kMeans_1 = require("./periorityFunction/kMeans");
-const redis_1 = require("redis");
+// import { createClient, SocketClosedUnexpectedlyError } from "redis";
 const types_1 = require("./types");
 const http_1 = __importDefault(require("http"));
 const cors_1 = __importDefault(require("cors"));
 const ws_1 = require("ws");
 // make sure not port is runnign on the 3000
 const PORT = 3000;
-console.log("Something  started");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-const client = (0, redis_1.createClient)();
+// const client = createClient();
 app.use(express_1.default.json());
 const server = http_1.default.createServer(app);
 const wss = new ws_1.WebSocketServer({ server });
@@ -166,9 +165,8 @@ wss.on('connection', (ws) => {
 });
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("function ran");
         try {
-            yield client.connect();
+            // await client.connect();
             console.log("server connected to redis");
             server.listen(PORT, () => {
                 console.log(`The server is listening on port http://localhost:${PORT}/ and websocket is listening on port ws://localhost:${PORT}/`);
