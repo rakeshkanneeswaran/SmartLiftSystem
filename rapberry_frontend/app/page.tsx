@@ -34,7 +34,7 @@ export default function LiftApp() {
   const [requestCount, setRequestCount] = useState<number>(0); // State to track number of entries
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:3000");
+    const socket = new WebSocket("https://reasons-trouble-virtual-strange.trycloudflare.com");
 
     socket.onopen = () => {
       console.log("WebSocket connection established");
