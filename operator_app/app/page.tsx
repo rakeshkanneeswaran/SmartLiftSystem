@@ -19,7 +19,7 @@ export default function OperatorApp() {
   const [countdown, setCountdown] = useState<number>(0); // State to manage the countdown
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:3000/");
+    const socket = new WebSocket("https://qkv4bg10-3000.inc1.devtunnels.ms/");
     socket.onopen = () => {
       console.log("WebSocket connection established");
 

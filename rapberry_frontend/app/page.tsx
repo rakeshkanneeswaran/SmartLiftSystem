@@ -16,7 +16,7 @@ interface CommandData {
 
 async function sendToServer(floorRequests: FloorRequest[], liftId: string): Promise<boolean> {
   try {
-    await axios.post('https://denmark-map-french-expect.trycloudflare.com/getperiority', {
+    await axios.post('https://qkv4bg10-3000.inc1.devtunnels.ms/getperiority', {
       floorRequestArray: floorRequests,
       liftId: liftId
     });
@@ -34,7 +34,7 @@ export default function LiftApp() {
   const [requestCount, setRequestCount] = useState<number>(0); // State to track number of entries
 
   useEffect(() => {
-    const socket = new WebSocket("https://denmark-map-french-expect.trycloudflare.com");
+    const socket = new WebSocket("https://qkv4bg10-3000.inc1.devtunnels.ms/");
 
     socket.onopen = () => {
       console.log("WebSocket connection established");
