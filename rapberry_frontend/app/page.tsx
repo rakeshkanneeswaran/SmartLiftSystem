@@ -14,11 +14,14 @@ interface CommandData {
   liftStatus?: boolean;
 }
 
-async function sendToServer(floorRequests: FloorRequest[], liftId: string): Promise<boolean> {
+async function sendToServer(
+  floorRequests: FloorRequest[],
+  liftId: string
+): Promise<boolean> {
   try {
-    await axios.post('https://qkv4bg10-3000.inc1.devtunnels.ms/getperiority', {
+    await axios.post("https://z8jxx47s-3000.inc1.devtunnels.ms/getperiority", {
       floorRequestArray: floorRequests,
-      liftId: liftId
+      liftId: liftId,
     });
     return true; // Indicate success
   } catch (error) {
@@ -59,23 +62,27 @@ export default function LiftApp() {
         switch (data.takeInput) {
           case "allow":
             setInputAllowed(false);
-            socket.send(JSON.stringify({
-              serviceType: "sendToOperator",
-              messageType: "CommandFromRaspberry",
-              liftStatus: true
-            }));
+            socket.send(
+              JSON.stringify({
+                serviceType: "sendToOperator",
+                messageType: "CommandFromRaspberry",
+                liftStatus: true,
+              })
+            );
             break;
           case "stop":
             setInputAllowed(true);
-            socket.send(JSON.stringify({
-              serviceType: "sendToOperator",
-              messageType: "CommandFromRaspberry",
-              liftStatus: false
-            }));
+            socket.send(
+              JSON.stringify({
+                serviceType: "sendToOperator",
+                messageType: "CommandFromRaspberry",
+                liftStatus: false,
+              })
+            );
             break;
           case "done":
             setFloorRequests((prevRequests) => {
-              console.log("done cammedidstkeh")
+              console.log("done cammedidstkeh");
               console.log("Sending floor requests to server", prevRequests);
               sendToServer(prevRequests, "lift1");
               setRequestCount(0); // Reset the request count
@@ -104,35 +111,47 @@ export default function LiftApp() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
       <div
-        className={`absolute top-4 right-4 px-4 py-2 rounded-full text-white ${isConnected ? 'bg-green-600 animate-pulse' : 'bg-gray-600'}`}
+        className={`absolute top-4 right-4 px-4 py-2 rounded-full text-white ${
+          isConnected ? "bg-green-600 animate-pulse" : "bg-gray-600"
+        }`}
       >
-        {isConnected ? 'Connected' : 'Disconnected'}
+        {isConnected ? "Connected" : "Disconnected"}
       </div>
       <header className="mb-8 text-center">
         <h1 className="text-4xl font-bold mb-2">SmartLiftSystem</h1>
-        <p className="text-xl">Developed under Accelerated Computing Vertical</p>
+        <p className="text-xl">
+          Developed under Accelerated Computing Vertical
+        </p>
       </header>
       {/* Show the number of entries */}
       <div className="mb-8 text-xl font-semibold">
-        {requestCount > 0 ? `Number of People: ${requestCount}` : 'No People yet'}
+        {requestCount > 0
+          ? `Number of People: ${requestCount}`
+          : "No People yet"}
       </div>
       {inputAllowed && (
         <div className="bg-red-600 text-white p-4 rounded mb-8">
           The lift is in transit. The operator will soon allow you to enter.
         </div>
       )}
-      <div className="grid grid-cols-2 gap-8"> {/* Increased gap from 4 to 8 */}
+      <div className="grid grid-cols-2 gap-8">
+        {" "}
+        {/* Increased gap from 4 to 8 */}
         {Array.from({ length: 13 }, (_, i) => (
           <button
             key={i}
-            onClick={() => handleButtonClick(i + 3)}  // Start from floor 3
-            className={`w-20 h-20 ${inputAllowed ? 'bg-gray-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform`}
+            onClick={() => handleButtonClick(i + 3)} // Start from floor 3
+            className={`w-20 h-20 ${
+              inputAllowed
+                ? "bg-gray-600 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            } text-white font-bold rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform`}
             disabled={inputAllowed}
           >
-            {i + 3}  {/* Label starts from floor 3 */}
+            {i + 3} {/* Label starts from floor 3 */}
           </button>
         ))}
-      </div> 
+      </div>
     </div>
   );
 }
